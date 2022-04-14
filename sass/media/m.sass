@@ -1,0 +1,283 @@
+.section
+	+w(320px)
+	margin: 0 auto
+	background: linear-gradient(270deg, #0000 calc(100% - 1px), #373A4A1A 0)
+	background-size: calc((100% - 26px) / (10 + 2) + 2px)
+
+.logo
+	display: flex
+	align-items: center
+	max-width: 146px
+	width: 100%	
+
+.header__inner
+	display: flex
+	width: 100%
+	justify-content: space-between
+	align-items: center
+
+.menu
+	display: flex
+	justify-content: space-between
+	max-width: 378px
+	width: 100%
+
+.menu__item
+	a
+		font-family: $f_bold
+		font-weight: 700
+		line-height: 17px
+		font-size: 14px
+		color: #373A4A
+		text-transform: uppercase
+
+.header__more-doc
+	display: flex
+	justify-content: space-between
+	max-width: 245px
+	width: 100%
+	align-items: center
+	a
+		text-transform: uppercase
+		color: $text-color
+		font-family: $f_bold
+
+
+
+.header--btn
+	display: flex
+	justify-content: space-between
+	max-width: 209px
+	width: 100%
+	.started
+		max-width: 147px
+		height: 42px
+		width: 100%
+		border: 2px solid $second-primary
+		box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.14)
+		border-radius: 40px
+		color: $second-primary
+		text-transform: uppercase
+		font-family: $f_bold
+		font-size: 14px
+		font-weight: 700
+	.login
+		font-family: $f_bold
+		font-weight: 700
+		font-size: 14px
+		text-transform: uppercase
+		color: $primary
+
+
+.content
+	display: flex
+
+.title
+	padding-top: 112px
+	font-size: 36px
+	font-family: $f_bold
+	line-height: 45px
+	align-items: center
+	font-weight: 700
+	text-transform: uppercase
+	display: flex
+	justify-content: center
+	margin-bottom: 54px
+.descr
+	font-family: $f_reg
+	font-size: 14px
+	font-weight: 400
+	color: $text-color
+	line-height: 24px
+
+.content__info
+	max-width: 550px
+	width: 100%
+
+.about-title
+		font-family: $f_bold
+		font-weight: 700
+		font-size: 20px
+		text-transform: uppercase
+		margin-bottom: 20px
+
+.about__descr
+	margin-bottom: 40px
+
+.link
+	color: $second-primary
+	text-decoration: underline
+	font-weight: 700
+	font-family: $f_bold
+	line-height: 17px
+	text-transform: uppercase
+
+.items
+	display:	grid
+	grid-template-columns:	repeat(auto-fit, minmax(290px, 1fr))
+	grid-gap: 18px
+   
+.item
+	text-decoration: none
+	list-style-type: none
+	padding: 25px 18px 20px
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), $main-white
+	box-shadow: 0px 0px 4px rgb(0 0 0 / 10%), 0px 0px 4px rgb(0 0 0 / 6%)
+	border-radius: 4px
+	margin-bottom: 44px
+
+.features__header
+	margin-bottom: 32px
+	display: flex
+
+.features__icon
+	display: flex
+	justify-content: center
+	align-items: center
+	margin-top: -50px
+	max-width: 80px
+	width: 100%
+	height: 80px
+	margin-right: 20px
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), $main-white
+	box-shadow: 2px 2px 8px rgb(0 0 0 / 10%), 0px 0px 4px rgb(0 0 0 / 8%), 1px 1px 4px rgb(0 0 0 / 12%)
+	border-radius: 4px
+
+.features-title
+	font-family: $f_bold
+	font-weight: 700
+	font-size: 20px
+	text-transform: uppercase
+
+.icon
+	width: 23px
+	height: 18px
+
+.price-title
+	font-family: $f_bold
+	font-weight: 700
+	font-size: 20px
+	text-transform: uppercase
+	margin-bottom: 40px
+
+.pricing__list
+	display: grid
+	grid-template-columns:	repeat(auto-fit, minmax(239px, 1fr))
+	grid-gap: 18px
+
+.price__item
+	display: inherit
+	background: #FCFCFC
+	border-radius: 4px
+	max-width: 279px
+	
+
+.price__container
+	display: inherit
+	justify-content: center
+	padding: 29px 20px 40px 19px
+    
+
+.price__group
+	display: flex
+	justify-content: space-around
+	width: 100%
+	margin-bottom: 10px
+
+.price__group-title 
+	font-family: $f_bold
+	font-size: 14px
+	font-weight: 700
+	color: $text-color
+	line-height: 24px
+	display: flex
+	justify-content: center
+
+.second__descr
+	ont-family: $f_bold
+	font-size: 14px
+	font-weight: 700
+	color: $second-primary
+	line-height: 24px
+	
+.save__up
+	display: flex
+	justify-content: center
+	margin-bottom: 40px
+
+.price
+	font-family: $f_bold
+	font-weight: 700
+	font-size: 40px
+	line-height: 49px
+	text-transform: uppercase
+	padding-top: 10px
+
+.price__info
+	text-align: left
+	max-width: 225px
+	margin-bottom: 32px
+
+.price__item:before
+	content: ''
+	height: 12px
+	max-width: 279px
+	width: 100%
+	position: absolute
+	border-radius: 4px 4px 0px 0px
+
+.price-green:before
+	background: #3EFFAE
+
+.price-blue:before
+	background: #3E74FF
+
+.price-yellow:before
+	background:#FFEC3E
+
+.price-orange:before
+	background: #F79141
+
+.dots__info::before
+	content: ''
+	position: absolute
+	top: 10px
+	left: -16px
+	width: 4px
+	height: 4px
+	border-radius: 50%
+
+.dots__info
+	font-family: $f_reg
+	font-size: 14px
+	font-weight: 400
+	color: $text-color
+	line-height: 24px
+	position: relative
+
+
+.get-started
+	color: $second-primary
+	text-transform: uppercase
+	text-decoration: underline
+	font-family: $f_bold
+	font-size: 14px
+	font-weight: 700
+	max-width: 147px
+	height: 42px
+	width: 100%
+	margin: 0 auto
+	&.is--active
+		max-width: 147px
+		height: 42px
+		width: 100%
+		border: 2px solid $second-primary
+		box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.14)
+		border-radius: 40px
+		color: $second-primary
+		text-transform: uppercase
+		text-decoration: none
+		font-family: $f_bold
+		font-size: 14px
+		font-weight: 700
+
