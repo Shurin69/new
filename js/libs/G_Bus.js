@@ -49,17 +49,5 @@ class _G_Bus {
 			delete _.events[prop];
 		}
 	}
-	inDev(){
-		const _ = this;
-		let title = document.createElement('DIV');
-		title.textContent = 'Р¤СѓРЅС†РёСЏ РІ СЂР°Р·СЂР°Р±РѕС‚РєРµ';
-		_.trigger('Modaler','showModal',{
-			type:'object',
-			content: title,
-			padding: '20px',
-			'border-radius':'10px',
-			'font-size': '40px'
-		});
-	}
 }
 export const G_Bus = new _G_Bus('prod');

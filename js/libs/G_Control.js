@@ -14,12 +14,9 @@ class _G_Control{
 	}
 	clickHandler(e){
 		const _ = this;
-
 		let item = e.target;
-
 		if(!item) return;
 		while(item != _) {
-			if(!item) break;
 			if( item.hasAttribute('data-click') ){
 				triggerWithEvent({'item':item,'event':e},'click');
 				return;
@@ -29,12 +26,11 @@ class _G_Control{
 	}
 	contextHandler(e){
 		const _ = this;
-		//e.preventDefault();
+		e.preventDefault();
 		let item = e.target;
 		if(!item) return;
 		if(e.which == 3){
 			while(item != _) {
-				if(!item) break;
 				if( ('context' in item.dataset) ){
 					triggerWithEvent({'item':item,'event':e},'context');
 					return;
@@ -45,8 +41,15 @@ class _G_Control{
 	}
 	focusOutHandler(e){
 		let item = e.target;
-		if( ('outfocus' in item.dataset) ){
-			triggerWithEvent({item:item,event:e},'outfocus');
+		if( ('focusout' in item.dataset) ){
+			triggerWithEvent({item:item,event:e},'focusout');
+			return;
+		}
+	}
+	focusInHandler(e){
+		let item = e.target;
+		if( ('focusin' in item.dataset) ){
+			triggerWithEvent({item:item,event:e},'focusin');
 			return;
 		}
 	}
@@ -58,6 +61,7 @@ class _G_Control{
 		}
 	}
 	inputHandler(e){
+		
 		let item = e.target;
 		if( ('input' in item.dataset) ){
 			triggerWithEvent({'item':item,'event':e},'input');
@@ -72,7 +76,7 @@ class _G_Control{
 		}
 	}
 	submitHandler(e){
-		//e.preventDefault();
+		e.preventDefault();
 		let item = e.target;
 		if( ('submit' in item.dataset) ){
 			triggerWithEvent({'item':item,'event':e},'submit');
@@ -83,8 +87,7 @@ class _G_Control{
 		let item = e.target;
 		if(!item.dataset) return;
 		if( ('scroll' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'scroll');
-			return;
+			return triggerWithEvent({'item':item,'event':e},'scroll');
 		}
 	}
 	overHandler(e){
@@ -98,20 +101,6 @@ class _G_Control{
 		let item = e.target;
 		if( ('dragStart' in item.dataset) ){
 			triggerWithEvent({'item':item,'event':e},'dragStart');
-			return;
-		}
-	}
-	dragHandler(e){
-		let item = e.target;
-		if( ('drag' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'drag');
-			return;
-		}
-	}
-	dragEndHandler(e){
-		let item = e.target;
-		if( ('dragEnd' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'dragEnd');
 			return;
 		}
 	}
@@ -159,21 +148,13 @@ class _G_Control{
 			return;
 		}
 	}
-	mousedownHandler(e){
-		let item = e.target;
-		if(! (item instanceof HTMLElement)) return;
-		if(!item.hasAttribute('data-mousedown')) return;
-		if( ('mousedown' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'mousedown');
-			return;
-		}
-	}
 
 
 
 	handle(){
 		const _  = this;
 		_.container.addEventListener('focusout',_.focusOutHandler);
+		_.container.addEventListener('focusin',_.focusInHandler);
 		_.container.addEventListener('submit',_.submitHandler);
 		_.container.addEventListener('click', _.clickHandler);
 		_.container.addEventListener('contextmenu', _.contextHandler);
@@ -184,17 +165,14 @@ class _G_Control{
 		_.container.addEventListener('mouseout',_.outHandler);
 		_.container.addEventListener('mouseleave',_.leaveHandler);
 		_.container.addEventListener('dragstart',_.dragStartHandler);
-		_.container.addEventListener('drag',_.dragHandler);
-		_.container.addEventListener('dragend',_.dragEndHandler);
 		_.container.addEventListener('dragenter',_.dragEnterHandler);
 		_.container.addEventListener('dragleave',_.dragLeaveHandler);
 		_.container.addEventListener('dragover',_.dragOverHandler);
 		_.container.addEventListener('drop',_.dropHandler);
 		_.container.addEventListener('scroll',_.scrollHandler);
-		_.container.addEventListener('mousedown',_.mousedownHandler);
 	}
 }
 
 const G_Control = new _G_Control();
 
-export {G_Control,G_Bus}
+export { G_Control, G_Bus }

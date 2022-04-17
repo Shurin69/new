@@ -4,9 +4,7 @@ export default class G_G{
 		_.initedUpdate = false;
 		_.handlersName = Symbol('handlers');
 		_[_.handlersName] = [];
-		
-		//_.tempObj = {};
-		
+
 		_.stateName = Symbol('state');
 		let validator = {
 			get:(target,key) =>{
@@ -41,7 +39,7 @@ export default class G_G{
 		if( param1 && param2){
 			if((typeof param1 === 'object') && (typeof param2 === 'object')){
 				let len1 = Object.getOwnPropertyNames(param1).length,
-				len2 = Object.getOwnPropertyNames(param2).length;
+					len2 = Object.getOwnPropertyNames(param2).length;
 				if(len1 === len2){
 					let qual = false;
 					for(let i = 0; i < len1; i++){
@@ -68,7 +66,7 @@ export default class G_G{
 		}else{
 			deep = false;
 		}
-		
+
 		return deep;
 	}
 	defineDefineMethod(props){
@@ -91,8 +89,8 @@ export default class G_G{
 			}
 		})
 	}
-	
-	
+
+
 	set(state){
 		const _ = this;
 		for(let prop in state){
@@ -101,30 +99,18 @@ export default class G_G{
 		_._$ = _[_.stateName]
 		return _._$;
 	}
-	
+
 	/* Working with Dom methods */
 	markup(domStr,isFragment=true){
 		const _ = this;
 		let
-		fragment = document.createDocumentFragment(),
-		parser= new DOMParser().parseFromString(domStr,'text/html');
+			fragment = document.createDocumentFragment(),
+			parser= new DOMParser().parseFromString(domStr,'text/html');
 		if(isFragment){
 			fragment.append(...parser.body.children);
 			return fragment;
 		}
 		return parser.body.children;
-	}
-	markupElement(domStr){
-		const _ = this;
-		let parser = new DOMParser().parseFromString(domStr,'text/html');
-		return parser.body.firstElementChild;
-	}
-	ascent(item,target,end = 'div'){
-		while (!item.classList.contains(end)) {
-			if (item.classList.contains(target)) break;
-			item = item.parentElement;
-		}
-		return item;
 	}
 	f(selector){
 		let searchedItems =  document.querySelectorAll(selector);
@@ -142,7 +128,7 @@ export default class G_G{
 		}
 	}
 	/* Working with Dom methods */
-	
+
 	update(props){
 		const _ = this;
 		if(!_.initedUpdate){
@@ -166,14 +152,14 @@ export default class G_G{
 				if(~props.indexOf(innerProp)){
 					fnObj[innerProp]();
 				}else if(innerProp === '')	{
-					
+
 					fnObj[innerProp]();
 				}
 			}
 		});
-		
+
 		//
-		
+
 	}
 	_(fn,deps = []){
 		const _ = this;
@@ -191,9 +177,9 @@ export default class G_G{
 				_[_.handlersName].push(propObj);
 			}
 		}
-		
+
 	}
-	
+
 	async start(props){
 		const _ = this;
 		await _.defineDefineMethod(props);
