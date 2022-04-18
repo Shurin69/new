@@ -319,15 +319,17 @@
 	background: $main-white
 	display: flex
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.12)
+	margin-right: 18px
 
 .email
 	display: flex
 	font-family: $f_bold
 	font-weight: 700
+	align-items: center
 	
 .email__g-card
 	display: flex
-	justify-content: space-between
+	justify-content: space-around
 
 .contact__form
 	max-width: 576px
@@ -410,3 +412,139 @@
 .validate:hover
 	background: $second-primary
 	color: $main-white
+
+
+
+
+.single-slider
+	.slider
+		@extend %tr
+		position: relative
+		&-inner
+			@extend %df
+			@extend %dfa
+			overflow: hidden
+		&-button
+			display: block
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			svg
+				+wh(18px,30px)
+				fill: rgb($gray)
+			&[disabled]
+				opacity: .4
+				cursor: initial
+		&-prev
+			left: 0
+		&-next
+			right: 0
+
+.back-slider
+	width: 100%
+	background:  linear-gradient(0deg, rgba(62, 116, 255, 0.2), rgba(62, 116, 255, 0.2)), linear-gradient(0deg, #FCFCFC, #FCFCFC)
+
+
+.main-slider
+	.slider
+		padding: 30px 20px 52px
+		// &-button
+		&-dots
+			position: absolute
+			bottom: 91px
+			margin-left:162px
+	.slide
+		@extend %df
+		// @extend %fdc
+		flex: 0 0 100%
+		top: 0
+		left: 0
+		position: relative
+		justify-content: space-between
+		&-left
+			@extend %df
+			@extend %fdc
+			align-items: flex-start
+			max-width: 576px
+			align-self: center
+			.title
+				margin-bottom: 20px
+		.text
+			margin-bottom: 30px
+			color: rgba($gray,.6)
+			line-height: calc(24em / 14)
+		&-right
+			@extend %dfc
+			padding: 20px 0
+			img
+				height: 360px
+		.anim
+			@extend %tr
+			opacity: 0
+
+.dot
+	+wh(12px)
+	margin-right: 20px
+	border-radius: 100%
+	background: rgba(55, 58, 74, 0.4)
+	&.active
+		transform: scale(0.7)
+	&:last-child
+		margin-right: 0
+	&-active
+		@extend %tr
+		+wh(20px,13px)
+		border-radius: 6px
+		background: #3E74FF
+		box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.18), 0px 0px 4px rgba(0, 0, 0, 0.14), 0px 0px 1px rgba(0, 0, 0, 0.4)
+		position: absolute
+		left: -4px
+		z-index: 1
+
+.slider-title
+	font-family: $f_bold
+	font-weight: 700
+	font-size: 20px
+	line-height: 24px
+	text-transform: uppercase
+	color:  #373A4A66
+	margin-bottom: 20px
+
+.title-slide
+	font-size: 36px
+	font-family: "Gilroy-Bold"
+	line-height: 45px
+	align-items: center
+	font-weight: 700
+	text-transform: uppercase
+	display: flex
+	justify-content: center
+	margin-bottom: 20px
+
+.content__slider
+	margin-bottom: 85px
+
+.prev
+	margin-left: -48px
+.next
+	margin-right: -48px
+	
+
+a.button
+	width:147px
+	height: 42px 
+
+.started
+		max-width: 147px
+		height: 42px
+		width: 100%
+		background: $main-white
+		border: 2px solid #3E74FF
+		box-shadow: 0px 0px 4px rgb(0 0 0 / 14%)
+		border-radius: 40px
+		color: #3E74FF
+		text-transform: uppercase
+		text-decoration: none
+		font-family: $f-bold
+		font-size: 14px
+		font-weight: 700
