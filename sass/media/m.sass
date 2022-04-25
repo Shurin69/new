@@ -3,24 +3,47 @@
 	margin: 0 auto
 	background: linear-gradient(270deg, #0000 calc(100% - 1px), #373A4A1A 0)
 	background-size: calc((100% - 26px) / (10 + 2) + 2px)
+	padding: 10px
+	padding-top: 30px
+
+
+.header__inner
+	display: flex
+	padding: 10px
+
+.disable-scroll
+	overflow: hidden
+
+.header
+	.section
+		padding: 0
 
 .logo
 	display: flex
 	align-items: center
 	max-width: 146px
+	height: 40px
 	width: 100%	
+	margin: 0 auto
 
-.header__inner
-	display: flex
-	width: 100%
-	justify-content: space-between
-	align-items: center
+.header__toggle
+	display: inline-block
+	width: 40px
+	height: 40px
+	cursor: pointer
+	border: none
+	background-color: transparent
+	transition: all 0.3s ease-in-out
+	z-index: 101
 
-.menu
-	display: flex
-	justify-content: space-between
-	max-width: 378px
-	width: 100%
+.header__toggle 
+	span 
+		display: block
+		width: 100%
+		height: 4px
+		margin: 0.5rem 0
+		background-color: $primary
+		transition: all 0.3s ease-in-out
 
 .menu__item
 	a
@@ -28,12 +51,11 @@
 		font-weight: 700
 		line-height: 17px
 		font-size: 14px
-		color: #373A4A
+		color: $primary
 		text-transform: uppercase
-
+	
 .header__more-doc
-	display: flex
-	justify-content: space-between
+	display: block
 	max-width: 245px
 	width: 100%
 	align-items: center
@@ -42,13 +64,48 @@
 		color: $text-color
 		font-family: $f_bold
 
+.header__toggle.is-active span:nth-child(1)
+	transform: translateY(13px) rotate(45deg)
+	transition-delay: 0.2s
 
+.header__toggle.is-active span:nth-child(2) 
+	opacity: 0
+	transition-delay: 0.2s
+
+.header__toggle.is-active span:nth-child(3) 
+	transition-delay: 0.2s
+	transform: translateY(-11px) rotate(-45deg)
+
+
+.header__menu.active 
+	opacity: 1
+	visibility: visible
+	background: $main-white
+		
+
+.header__menu 
+	position: absolute
+	top: -15px
+	left: 0
+	z-index: 100
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 100%
+	height: 110vh
+	overflow-y: auto
+	visibility: hidden
+	text-align: center
+	opacity: 0
+	border-top: 1px solid var(--primary-color)
+	background-color: var(--white-color)
+	transition: 0.3s ease-in-out
 
 .header--btn
 	display: flex
-	justify-content: space-between
-	max-width: 209px
+	justify-content: center
 	width: 100%
+	margin-bottom: 2rem
 	.started
 		max-width: 147px
 		height: 42px
@@ -61,6 +118,7 @@
 		font-family: $f_bold
 		font-size: 14px
 		font-weight: 700
+		margin-right: 40px
 	.login
 		font-family: $f_bold
 		font-weight: 700
@@ -68,14 +126,48 @@
 		text-transform: uppercase
 		color: $primary
 
+.menu__list
+	.menu__item
+		display: flex
+		justify-content: space-between
+
+.menu__list 
+	width: 100%
+	margin-bottom: 2rem
+	background: $main-white
+
+.menu__item:not(:last-child) 
+	margin-bottom: 2rem
+	display: flex
+	justify-content: center
+
+.menu__item:first-child
+	padding-top: 20px
+
+.header__more-doc
+	display: flex
+	margin: 0 auto
+	justify-content: space-around
+	margin-bottom: 2rem
+
+.menu__link 
+	display: inline-block
+	text-transform: uppercase
+	color: var($primary)
+	transition: 0.3s ease-in-out(header)
+
+.menu__link:hover 
+	color: var($second-primary)
 
 .content
-	display: flex
-	justify-content: center	
+	display: block
+	margin: 0 auto
+
+.content__img
+	margin-bottom: 40px
 
 .title
-	padding-top: 112px
-	font-size: 36px
+	font-size: 24px
 	font-family: $f_bold
 	line-height: 45px
 	align-items: center
@@ -90,6 +182,7 @@
 	font-weight: 400
 	color: $text-color
 	line-height: 24px
+
 
 .content__info
 	max-width: 550px
@@ -279,12 +372,9 @@
 		font-size: 14px
 		font-weight: 700
 
-.company__content
-	display: flex
-	justify-content: space-between	
-
 .company__descr
 	max-width: 550px
+	margin-bottom: 20px
 
 .descr.row-1
 	margin-bottom: 16px
@@ -299,7 +389,6 @@
 	align-items: center
 
 .contact__info
-	display: flex
 	justify-content: space-around
 
 .descr__contact 
@@ -307,29 +396,36 @@
 	width: 100%
 	margin: 0 auto
 	align-self: center
+	padding-top: 20px
+	padding-bottom: 20px
 
 .description
+	padding: 10px
 	font-family: $f_reg
 	line-height: 24px
 	margin-bottom: 40px
 	
 .contact__descr
+	margin-right: 20px
 	max-width: 576px
 	width: 100%
 	background: $main-white
 	display: flex
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.12)
-	margin-right: 18px
+	margin-bottom: 20px
 
 .email
 	display: flex
 	font-family: $f_bold
 	font-weight: 700
-	align-items: center
+	margin-bottom: 10px
 	
 .email__g-card
 	display: flex
-	justify-content: space-around
+	justify-content: space-between
+
+.g-card__email
+	margin: 0 auto
 
 .contact__form
 	max-width: 576px
@@ -353,53 +449,57 @@
 
 .send__info
 	display: flex
-	justify-content: flex-end
+	justify-content: center
 	padding-top: 39px
+	margin: 0 auto
 	
 
 .content__send
-	display: flex
+	text-align: center
 	justify-content: space-between
-	max-width: 576px
 	width: 100%
+	max-width: 576px
 
 .send__descr
 	max-width: 378px
+	margin: 0 auto
 
 .privacy 
 	font-weight: 700
 	text-decoration: underline
 
-.footer
-	padding-top: 135px
+	
 
 .content__footer
-	display: flex
 	background: $backround-footer
-	height: 72px
 	align-items: center
 	justify-content: center
-	.content
-		max-width: 1118px
-		width: 100%
-		justify-content: space-between
-		
+
+.content__foot
+	padding-top: 15px
+	justify-content: space-around
+	text-align: center
+
+.footer__descr
+	margin: 0 auto
+	max-width: 200px
+
 .footer__item
 	font-family: $f_bold
 	font-weight: 700
 	color: $main-white
+	padding-bottom: 15px
 
 .copyrighy
 	font-weight: 400
 
 .footer__logo
+	margin-bottom: 15px
 	width: 148px
 	height: 24px
 
 .items__footer 
-	max-width: 555px
 	width: 100%
-	display: flex
 	justify-content: space-between
 	align-items: center
 
@@ -414,104 +514,126 @@
 	color: $main-white
 
 
+.main-slider .slide-left, .main-slider .slide, .single-slider .slider-inner, .main-slider .slide-right 
+	display: flex
+
+.main-slider .slide-right 
+	justify-content: center
+	align-items: center
+
+.single-slider .slider-inner 
+	align-items: center
+
+.main-slider .slide-left 
+	flex-direction: column
+
+.dot-active, .main-slider .slide .anim, .single-slider .slider 
+	transition: 0.35s ease
 
 
-.single-slider
-	.slider
-		@extend %tr
-		position: relative
-		&-inner
-			@extend %df
-			@extend %dfa
-			overflow: hidden
-		&-button
-			display: block
-			position: absolute
-			top: 50%
-			transform: translateY(-50%)
-			svg
-				+wh(18px,30px)
-				fill: rgb($gray)
-			&[disabled]
-				opacity: .4
-				cursor: initial
-		&-prev
-			left: 0
-		&-next
-			right: 0
-
-.back-slider
-	width: 100%
-	background:  linear-gradient(0deg, rgba(62, 116, 255, 0.2), rgba(62, 116, 255, 0.2)), linear-gradient(0deg, #FCFCFC, #FCFCFC)
-
-
-.main-slider
-	.slider
-		padding: 30px 20px 52px
-		// &-button
-		&-dots
-			position: absolute
-			bottom: 91px
-			margin-left:162px
-	.slide
-		@extend %df
-		// @extend %fdc
-		flex: 0 0 100%
-		top: 0
+.single-slider .slider 
+	position: relative
+	&-inner 
+		overflow: hidden
+	
+	&-button 
+		display: block
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		svg 
+			width: 18px
+			height: 30px
+			fill: rgb(var(--gray))
+		
+		&[disabled] 
+			opacity: 0.4
+			cursor: initial
+		
+	
+	&-prev 
 		left: 0
-		position: relative
-		justify-content: space-between
-		&-left
-			@extend %df
-			@extend %fdc
-			align-items: flex-start
-			max-width: 576px
-			align-self: center
-			.title
-				margin-bottom: 20px
-		.text
-			margin-bottom: 30px
-			color: rgba($gray,.6)
-			line-height: calc(24em / 14)
-		&-right
-			@extend %dfc
-			padding: 20px 0
-			img
-				height: 360px
-		.anim
-			@extend %tr
-			opacity: 0
+	
+	&-next 
+		right: 0
 
-.dot
-	+wh(12px)
+
+.back-slider 
+	width: 100%
+	background: linear-gradient(0deg, rgba(62, 116, 255, 0.2), rgba(62, 116, 255, 0.2)), linear-gradient(0deg, #FCFCFC, #FCFCFC)
+	.section
+		padding-top: 0
+
+.main-slider .slider 
+	max-width: 1170px
+	margin: 0 auto
+	padding: 30px 20px 52px
+	&-dots 
+		position: absolute
+		bottom: 50px
+		margin-left: 0
+	
+
+.main-slider .slide 
+	flex: 0 0 100%
+	top: 0
+	left: 0
+	position: relative
+	justify-content: space-between
+	flex-direction: column
+	&-left 
+		align-items: flex-start
+		max-width: 576px
+		align-self: center
+		.title 
+			margin-bottom: 20px
+	.text 
+		margin-bottom: 30px
+		color: rgba(var(--gray), 0.6)
+		line-height: 1.7142857143em
+	
+	&-right 
+		padding: 20px 0
+		img 
+			max-height: 360px
+	.anim 
+		opacity: 0
+
+
+.dot 
+	width: 12px
+	height: 12px
 	margin-right: 20px
 	border-radius: 100%
 	background: rgba(55, 58, 74, 0.4)
-	&.active
+	&.active 
 		transform: scale(0.7)
-	&:last-child
+	
+	&:last-child 
 		margin-right: 0
-	&-active
-		@extend %tr
-		+wh(20px,13px)
+	
+	&-active 
+		width: 20px
+		height: 13px
 		border-radius: 6px
 		background: #3E74FF
 		box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.18), 0px 0px 4px rgba(0, 0, 0, 0.14), 0px 0px 1px rgba(0, 0, 0, 0.4)
 		position: absolute
 		left: -4px
 		z-index: 1
+	
 
-.slider-title
-	font-family: $f_bold
+.slider-title 
+	font-family: "Gilroy-Bold"
 	font-weight: 700
 	font-size: 20px
 	line-height: 24px
 	text-transform: uppercase
-	color:  #373A4A66
+	color: rgba(55, 58, 74, 0.4)
 	margin-bottom: 20px
 
-.title-slide
-	font-size: 36px
+.title-slide 
+	font-size: 24px
 	font-family: "Gilroy-Bold"
 	line-height: 45px
 	align-items: center
@@ -521,30 +643,36 @@
 	justify-content: center
 	margin-bottom: 20px
 
-.content__slider
-	margin-bottom: 85px
+.content__slider 
+	margin-bottom: 20px
 
-.prev
-	margin-left: -48px
-.next
-	margin-right: -48px
-	
 
-a.button
-	width:147px
-	height: 42px 
+.prev 
+	display: none
 
-.started
-		max-width: 147px
-		height: 42px
-		width: 100%
-		background: $main-white
-		border: 2px solid #3E74FF
-		box-shadow: 0px 0px 4px rgb(0 0 0 / 14%)
-		border-radius: 40px
-		color: #3E74FF
-		text-transform: uppercase
-		text-decoration: none
-		font-family: $f-bold
-		font-size: 14px
-		font-weight: 700
+.next 
+	display: none
+
+
+a.button 
+	width: 147px
+	height: 42px
+
+.started 
+	max-width: 147px
+	height: 42px
+	width: 100%
+	background:  #ffffff
+	border: 2px solid  #3E74FF
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.14)
+	border-radius: 40px
+	color:  #3E74FF
+	text-transform: uppercase
+	text-decoration: none
+	font-family: "Gilroy-Bold"
+	font-size: 14px
+	font-weight: 700
+
+
+
+

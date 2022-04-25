@@ -1,21 +1,3 @@
-%df
-	display: flex
-%dfi
-	@extend %df
-	justify-content: space-between
-%dfc
-	@extend %df
-	justify-content: center
-	align-items: center
-%dfa
-	align-items: center
-%fw
-	flex-wrap: wrap
-%fdc
-	flex-direction: column
-%tr
-	transition: .35s ease
-     
 ///*--==[ Ширины]==--*/
 
 
@@ -23,21 +5,20 @@
 $col: 0
 $gap: 0
 
-///*--==[ Цвета ]==--*/
-\:root 
-	--black: #{getRgb(#000)}
-	--gray: #{getRgb(#525466)}
-	--white: #{getRgb(#fff)}
-	--red: #{getRgb(#FF0000)}
-	--green: #{getRgb(#00FF00)}
-	--blue: #{getRgb(#4684E2)}
-	--gold: #{getRgb(#FFCB45)}
 
 // --==[ Названия шрифтов]==--
 //+font_inc($f_reg,'path')
 $f_reg: 'Gilroy'
 $f_bold: 'Gilroy-Bold'
 
+:root 
+    --black: 0, 0, 0
+    --gray: 82, 84, 102
+    --white: 255, 255, 255
+    --red: 255, 0, 0
+    --green: 0, 255, 0
+    --blue: 70, 132, 226
+    --gold: 255, 203, 69
 
 
 ///*--==[ Цвета ]==--*/
@@ -47,10 +28,3 @@ $second-primary: #3E74FF
 $main-white: #fff
 $text-color: rgba(55, 58, 74, 0.4)
 $backround-footer:#373A4A
-$black: var(--black)
-$gray: var(--gray)
-$white: var(--white)
-$red: var(--red)
-$green: var(--green)
-$blue: var(--blue)
-$gold: var(--gold)

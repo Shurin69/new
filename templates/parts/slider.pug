@@ -1,0 +1,61 @@
+.back-slider
+  section.section
+      .main-slider.single-slider
+            .slider.bgc(data-callback='mainSliderChange', auto-play='10')
+              button.slider-button.slider-prev(data-click='arrowClick', data-direction='prev')
+                svg.prev
+                  use(xlink:href='img/sprite.svg#arrow-left')
+              .slider-inner
+                .slide.active(data-id='0')
+                  .slide-left
+                    .content__slider
+                      .slider-title.anim Opportunities
+                      h2.title-slide
+                        span.title-text.anim customize and manage your product card
+                      p.descr.anim
+                        | Customize your product card for the ultimate effect, and make it convenient for your customers and you. Get a week of free access to the app to explore new opportunities for your business.
+                    a.button.anim(href='#')
+                      button.started get started
+                  .slide-right.anim
+                    img(src='img/main-slider-bg-1.png', alt='')
+                .slide(data-id='1')
+                  .slide-left
+                    .content__slider
+                      .slider-title.anim Opportunities
+                      h2.title-slide
+                        span.title-text.anim customize and manage your product card
+                      p.descr.anim
+                        | Customize your product card for the ultimate effect, and make it convenient for your customers and you. Get a week of free access to the app to explore new opportunities for your business.
+                    a.button.anim(href='#')
+                      button.started get started
+                  .slide-right.anim
+                    img(src='img/main-slider-bg-2.png', alt='')
+                .slide(data-id='2')
+                  .slide-left
+                    .content__slider
+                      .slider-title.anim Opportunities
+                      h2.title-slide
+                        span.title-text.anim customize and manage your product card
+                      p.descr.anim
+                        | Customize your product card for the ultimate effect, and make it convenient for your customers and you. Get a week of free access to the app to explore new opportunities for your business.
+                    a.button.anim(href='#')
+                      button.started get started
+                  .slide-right.anim
+                    img(src='img/main-slider-bg-3.png', alt='')
+                .slide(data-id='3')
+                  .slide-left
+                    .content__slider
+                      .slider-title.anim Opportunities
+                      h2.title-slide
+                        span.title-text.anim customize and manage your product card
+                      p.descr.anim
+                        | Customize your product card for the ultimate effect, and make it convenient for your customers and you. Get a week of free access to the app to explore new opportunities for your business.
+                    a.button.anim(href='#')
+                      button.started get started
+                  .slide-right.anim
+                    img(src='img/main-slider-bg-4.png', alt='')
+              button.slider-button.slider-next(data-click='arrowClick', data-direction='next')
+                svg.next
+                  use(xlink:href='img/sprite.svg#arrow-right')
+              .slider-dots(data-click='dotClick')
+                .dot-active        

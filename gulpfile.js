@@ -139,7 +139,8 @@ gulp.task('browserSync', function() {
     let serverCfg = {
         port: 80,
         open: true,
-        notify: true
+        notify: true,
+        online: true
     };
     if (!proxy) {
         serverCfg['server'] = {

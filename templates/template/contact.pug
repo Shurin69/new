@@ -1,25 +1,27 @@
-.section 
+section.section 
     .contact 
         .title contact
-        .contact__info
-            .contact__descr 
-                .descr__contact 
-                    p.description Need help with the implementation of our application and its further use? For your convenience, you can contact us by E-mail. We will try to solve your question promptly so that our cooperation is as productive and comfortable as possible. 
-                    .email__g-card
-                        span.email 
-                            svg.email__sprite
-                                use(xlink:href="img/sprite.svg#email")
-                            |g-card@g-app.com
-                        span.email
-                            svg.email__sprite 
-                                use(xlink:href="img/sprite.svg#email")
-                            |mail@g-app.com
-            form.contact__form
-                .inputs
-                    g-input(class='g-item g-input-text' type='text'  placeholder='"Keanu Reevse"')
-                    g-input(class='g-item g-input-email' type='email'  placeholder='Email')
-                    g-input(class='g-item g-input-phone' type='phone'  placeholder='"+7 (777) 777-77-77"')
-                    g-input(class='g-item g-input-text' type='text'  placeholder='"Please, |"' className="memo")
+        .container
+            .contact__info
+                .contact__descr 
+                    .descr__contact 
+                        p.description Need help with the implementation of our application and its further use? For your convenience, you can contact us by E-mail. We will try to solve your question promptly so that our cooperation is as productive and comfortable as possible. 
+                        .email__g-card
+                            .g-card__email
+                                span.email 
+                                    svg.email__sprite
+                                        use(xlink:href="img/sprite.svg#email")
+                                    |g-card@g-app.com
+                                span.email
+                                    svg.email__sprite 
+                                        use(xlink:href="img/sprite.svg#email")
+                                    |mail@g-app.com
+                form.contact__form
+                    .inputs
+                        g-input(class='g-item g-input-text' type='text'  placeholder='"Keanu Reevse"')
+                        g-input(class='g-item g-input-email' type='email'  placeholder='Email')
+                        g-input(class='g-item g-input-phone' type='phone'  placeholder='"+7 (777) 777-77-77"')
+                        g-input(class='g-item g-input-text' type='text'  placeholder='"Please, |"')
         .send__info
             .content__send
                 button.btn.validate(data-click='inputValidate' data-target=".g-input-phone") send
